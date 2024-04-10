@@ -5,6 +5,7 @@ import fetchData from "../utils/fetchData";
 const SongDetails = () => {
   const [song, setSong] = useState({});
   const [newSongName, setNewSongName] = useState("");
+  const [newArtist, setNewArtist] = useState("");
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -55,16 +56,15 @@ const SongDetails = () => {
     <>
       <h1>Song Details</h1>
       <p>
-        {song.name} - {song.id}
+        {song.name} By {song.artist} - {song.id}
       </p>
       <button onClick={deleteSong}>Delete Song</button>
       <form onSubmit={changeSongName}>
-        <label htmlFor="name">Update Song Name</label>
+        <label htmlFor="name">Update Song Name </label>
         <input
           type="text"
           name="name"
           id="name"
-          value={newSongName}
           onChange={(e) => setNewSongName(e.target.value)}
         />
         <button type="submit">Submit</button>

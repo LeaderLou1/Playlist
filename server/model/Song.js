@@ -10,10 +10,11 @@ the collection of fellows.
 class Song {
   static #all = [];
 
-  constructor(name) {
+  constructor(name, artist) {
     // Create
     this.id = getId();
     this.name = name;
+    this.artist = artist;
 
     Song.#all.push(this);
   }

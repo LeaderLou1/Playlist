@@ -44,6 +44,7 @@ app.get("/api/songs/:id", serveSong);
 app.post("/api/songs", createSong);
 app.patch("/api/songs/:id", updateSong);
 app.delete("/api/songs/:id", deleteSong);
+
 app.get("*", (req, res, next) => {
   if (req.originalUrl.startsWith("/api")) return next();
   res.sendFile(pathToFrontendDist);
